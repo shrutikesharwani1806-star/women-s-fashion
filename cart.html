@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Hub cart</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Google Font (Elegant look similar to image) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        .animate-fadeUp {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+
+
+
+<body class="overflow-x-hidden">
+
+
+    <section class="w-[100vw] min-h-[100vh] px-[5vw] md:px-[6vw] py-[4vh] md:py-[6vh] bg-[#f7ebe5]">
+
+        <!-- HEADER -->
+        <div class="flex flex-col md:flex-row gap-[3vh] md:gap-0 justify-between items-start md:items-center mb-[5vh]">
+            <h1 class="text-[8vw] md:text-[3vw] font-semibold">My Cart</h1>
+
+            <a href="shop.html" class="text-[4vw] md:text-[1vw] px-[4vw] md:px-[2vw] py-[1.2vh]
+            border rounded transition hover:bg-black hover:text-white">
+                ← Continue Shopping
+            </a>
+        </div>
+
+        <!-- EMPTY CART -->
+        <div id="emptyCart" class="hidden text-center py-[15vh]">
+            <p class="text-[5vw] md:text-[1.2vw] opacity-60 mb-[4vh]">
+                No products added
+            </p>
+            <a href="shop.html" class="bg-black text-white px-[6vw] md:px-[4vw] py-[2vh]
+            rounded hover:bg-[#c08b7a] transition">
+                Shop Now
+            </a>
+        </div>
+
+        <!-- CART TABLE -->
+        <div id="cartWrapper" class="bg-white rounded-[3vw] md:rounded-[1.5vw] p-[3vh]">
+
+            <!-- TABLE HEADER (HIDDEN ON MOBILE) -->
+            <div class="hidden md:grid grid-cols-5 text-[1vw] opacity-60 mb-[2vh]">
+                <span>Product</span>
+                <span>Price</span>
+                <span class="text-center">Qty</span>
+                <span>Total</span>
+                <span></span>
+            </div>
+
+            <!-- ITEMS -->
+            <div id="cartItems" class="flex flex-col gap-[4vh]"></div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div id="summary" class="mt-[6vh] flex justify-center md:justify-end">
+            <div class="bg-white p-[4vh] rounded-[3vw] md:rounded-[1.5vw] w-full md:w-[30vw]">
+
+                <div class="flex justify-between mb-[2vh] text-[4vw] md:text-[1vw]">
+                    <span>Subtotal</span>
+                    <span>$<span id="subTotal">0</span></span>
+                </div>
+
+                <div class="flex justify-between font-bold text-[5vw] md:text-[1.2vw]">
+                    <span>Total</span>
+                    <span>$<span id="total">0</span></span>
+                </div>
+
+                <button class="mt-[4vh] w-full text-[4vw] md:text-[1vw] bg-black font-bold text-white py-[2vh]
+                rounded hover:bg-[#c08b7a] transition">
+                    Order Now
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

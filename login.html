@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Hub Login</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Google Font (Elegant look similar to image) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-elegant {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-[100vh] flex items-center justify-center 
+bg-gradient-to-br from-pink-300 overflow-x-hidden via-purple-300 to-pink-400">
+
+
+    <section class="w-[90vw] max-w-[420px] bg-white/95
+rounded-[3vw] md:rounded-[1.5vw]
+shadow-xl px-[6vw] md:px-[3vw] py-[6vh]">
+
+        <!-- BRAND -->
+        <h1 class="text-center
+    text-[10vw] md:text-[3vw]
+    leading-tight text-[#7a4a6b] mb-[4vh]">
+            login
+        </h1>
+
+        <!-- FORM -->
+        <form id="loginForm" class="space-y-[3vh]">
+
+            <!-- USERNAME -->
+            <div class="relative">
+                <input required type="text" class="peer w-full border-b border-gray-300
+                bg-transparent py-[1.5vh] text-[4vw] md:text-[1vw]
+                focus:outline-none focus:border-[#c06c9c]" />
+
+                <label class="absolute left-0 top-1/2 -translate-y-1/2
+            text-gray-400 text-[3.5vw] md:text-[0.9vw]
+            peer-focus:top-0 peer-focus:text-[3vw] md:peer-focus:text-[0.7vw]
+            peer-valid:top-0 peer-valid:text-[3vw] md:peer-valid:text-[0.7vw]
+            transition-all">
+                    Username
+                </label>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="relative">
+                <input required type="password" class="peer w-full border-b border-gray-300
+                bg-transparent py-[1.5vh] text-[4vw] md:text-[1vw]
+                focus:outline-none focus:border-[#c06c9c]" />
+
+                <label class="absolute left-0 top-1/2 -translate-y-1/2
+            text-gray-400 text-[3.5vw] md:text-[0.9vw]
+            peer-focus:top-0 peer-focus:text-[3vw] md:peer-focus:text-[0.7vw]
+            peer-valid:top-0 peer-valid:text-[3vw] md:peer-valid:text-[0.7vw]
+            transition-all">
+                    Password
+                </label>
+            </div>
+
+            <!-- BUTTON -->
+            <button type="submit" class="w-full mt-[3vh] py-[1.8vh]
+            rounded-full font-semibold
+            text-white text-[4vw] md:text-[1vw]
+            bg-gradient-to-r from-purple-600 to-pink-500
+            hover:opacity-90 transition">
+                LOGIN
+            </button>
+        </form>
+
+        <!-- STATUS -->
+        <p id="statusText" class="text-center mt-[3vh] text-green-600
+       text-[4vw] md:text-[1vw] opacity-0 transition">
+            You are signed in
+        </p>
+
+        <!-- CREATE ACCOUNT -->
+        <button class="w-full mt-[4vh]
+    py-[1.5vh] rounded-full
+    border border-pink-500
+    text-pink-500 text-[4vw] md:text-[1vw]
+    hover:bg-pink-500 hover:text-white transition">
+            CREATE NEW ACCOUNT
+        </button>
+
+    </section>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

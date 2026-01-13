@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>womens product</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-elegant {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 overflow-x-hidden">
+
+    <!-- ================= NAVBAR SPACER ================= -->
+    <div class="h-[12vh]">
+        <header class="w-[100vw] h-[12vh] flex z-[2000] shadow-lg fixed items-center px-[5vw] bg-[#f7ebe5]">
+            <h1 class="font-elegant text-[4vw] mr-[5vw] md:text-[2vw] cursor-pointer font-bold">Women's</h1>
+
+
+            <ul class="hidden md:flex gap-[3vw] mx-[15vw] text-[1vw]">
+                <li><a href="./index.html" class="hover:text-[#c08b7a] transition">Home</a></li>
+                <li><a href="./shop.html" class="hover:text-[#c08b7a] transition">Shop</a></li>
+                <li><a href="./categories.html" class="hover:text-[#c08b7a] transition">Categories</a></li>
+                <li><a href="./about.html" class="hover:text-[#c08b7a] transition">About</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <div class="relative hidden mx-[2vw] ml-[5vw] sm:block">
+                <input type="text" placeholder="Search products..." class="w-[20vw] md:w-[14vw] h-[5vh]
+               pl-[2.5vw] pr-[1vw]
+               rounded-full
+               bg-white/70
+               text-[1vw]
+               outline-none
+               focus:w-[22vw]
+               transition-all duration-500" />
+
+                <span class="absolute left-[1vw] top-1/2 -translate-y-1/2 text-gray-500 text-[1vw]">
+                    🔍
+                </span>
+            </div>
+
+
+
+            <!-- Mobile Search -->
+            <div class="w-[50%] md:hidden ml-[3vw] sm:hidden">
+                <input type="text" placeholder="Search..." class="w-full h-[6vh]
+               px-[4vw]
+               rounded-full
+               bg-white
+               text-[4vw]
+               outline-none
+               shadow-md" />
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden mx-[2vw] text-[6vw] z-50">
+                ☰
+            </button>
+
+            <span onclick="window.location.href='login.html'" class="cursor-pointer text-[5vw] sm:text-xl">👤</span>
+            <a href="cart.html" class="relative mx-[2vw]">
+                🛒
+                <span id="cartCount" class="absolute -top-[1vh] -right-[1vw] bg-black text-white
+             text-[3vw] md:text-[0.7vw] px-[1.5vw] md:px-[0.5vw] rounded-full">
+                    0
+                </span>
+
+            </a>
+        </header>
+
+        <div id="mobileMenu" class="fixed top-[12vh] right-[4vw]
+         w-[50vw] h-[80vw]
+         bg-[#f7ebe5]
+         flex flex-col items-center justify-center gap-[4vh]
+         rounded-[3vw] shadow-xl
+         translate-x-[60vw]
+         transition-all duration-700 ease-in-out
+         z-40">
+
+
+
+            <a href="index.html" class="text-[5vw] font-elegant hover:text-[#c08b7a] transition">
+                Home
+            </a>
+
+            <a href="shop.html" class="text-[5vw] font-elegant hover:text-[#c08b7a] transition">
+                Shop
+            </a>
+
+            <a href="./categories.html" class="text-[5vw] font-elegant hover:text-[#c08b7a] transition">
+                Categories
+            </a>
+
+            <a href="./about.html" class="text-[5vw] font-elegant hover:text-[#c08b7a] transition">
+                About
+            </a>
+
+        </div>
+    </div>
+
+    <!-- ================= PRODUCT CONTAINER ================= -->
+    <section class="max-w-[90vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-[8vw] md:gap-[6vw] py-[6vh] fade">
+
+        <!-- ================= IMAGE SECTION ================= -->
+        <div class="flex flex-col items-center">
+            <img id="productImg"
+                class="w-full max-w-[32rem] h-[55vh] md:h-[65vh] object-cover rounded-2xl shadow-lg transition duration-500" />
+
+            <!-- Thumbnails -->
+            <div id="thumbs" class="flex gap-[2vw] mt-[3vh]"></div>
+        </div>
+
+        <!-- ================= PRODUCT INFO ================= -->
+        <div class="flex flex-col">
+
+            <h1 id="productName" class="font-elegant text-[7vw] md:text-[2.4vw] font-semibold leading-tight">
+            </h1>
+
+            <div id="productRating" class="text-yellow-500 mt-[1vh] text-[4vw] md:text-[1vw]"></div>
+
+            <p id="productPrice" class="text-[6vw] md:text-[1.8vw] font-semibold mt-[2vh]">
+            </p>
+
+            <p class="text-gray-600 mt-[2vh] text-[4vw] md:text-[1vw] leading-relaxed">
+                Premium quality fabric designed for modern elegance, comfort and durability.
+                Perfect for casual outings and special occasions.
+            </p>
+
+            <!-- COLORS -->
+            <div class="mt-[4vh]">
+                <p class="font-medium text-[4.5vw] md:text-[1vw]">Color</p>
+                <div id="colorOptions" class="flex gap-[2vw] mt-[1.5vh]"></div>
+            </div>
+
+            <!-- SIZES -->
+            <div class="mt-[4vh]">
+                <p class="font-medium text-[4.5vw] md:text-[1vw]">Size</p>
+                <div id="sizeOptions" class="flex gap-[2vw] mt-[1.5vh] flex-wrap"></div>
+            </div>
+
+            <!-- QUANTITY -->
+            <div class="flex items-center gap-[4vw] md:gap-[1vw] mt-[4vh]">
+                <button onclick="changeQty(-1)"
+                    class="px-[4vw] md:px-[1vw] py-[1vh] bg-gray-200 rounded-lg text-lg">−</button>
+
+                <span id="qty" class="text-[5vw] md:text-[1vw] font-medium">1</span>
+
+                <button onclick="changeQty(1)"
+                    class="px-[4vw] md:px-[1vw] py-[1vh] bg-gray-200 rounded-lg text-lg">+</button>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="flex gap-[3vw] mt-[5vh] flex-wrap">
+                <button onclick="addToCart()" class="bg-black text-white px-[10vw] md:px-[3.5vw] py-[1.7vh]
+        rounded-full hover:bg-[#c08b7a] transition shadow-lg">
+                    Add to Cart
+                </button>
+
+                <button onclick="buyNow()" class="bg-[#c08b7a] text-white px-[10vw] md:px-[3.5vw] py-[1.7vh]
+        rounded-full hover:bg-black transition shadow-lg">
+                    Buy Now
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="max-w-[90vw] mx-auto mt-[10vh] pb-[10vh] fade">
+        <h2 class="font-elegant text-[6vw] md:text-[2.2vw] mb-[4vh]">
+            Customer Reviews
+        </h2>
+
+        <div id="reviews" class="space-y-[4vh]"></div>
+    </section>
+
+    <script src="./main.js"></script>
+    <script src="./product.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+
+</html>
