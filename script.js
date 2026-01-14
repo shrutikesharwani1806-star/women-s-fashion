@@ -215,7 +215,7 @@ if (grid) {
                 ${"★".repeat(product.rating)}${"☆".repeat(5 - product.rating)}
             </div>
 
-            <p class="mt-[0.8vh] text-[0.95vw] text-gray-600">
+            <p class="mt-[0.8vh] md:text-[0.95vw] text-[2.2vw] text-gray-600">
                 ${product.price}
             </p>
 
