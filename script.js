@@ -39,27 +39,34 @@ function resetAutoSlide() {
 startAutoSlide();
 
 /* ================= MOBILE MENU ================= */
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-let isOpen = false;
+document.addEventListener("DOMContentLoaded", () => {
 
-if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener("click", () => {
-        isOpen = !isOpen;
-        mobileMenu.classList.toggle("translate-x-0");
-        mobileMenu.classList.toggle("translate-x-[60vw]");
-        menuBtn.textContent = isOpen ? "✕" : "☰";
-    });
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    document.querySelectorAll("#mobileMenu a").forEach(link => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.add("translate-x-[60vw]");
-            mobileMenu.classList.remove("translate-x-0");
-            menuBtn.textContent = "☰";
-            isOpen = false;
+    if (menuBtn && mobileMenu) {
+        let isOpen = false;
+
+        menuBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            isOpen = !isOpen;
+
+            mobileMenu.classList.toggle("translate-x-0");
+            mobileMenu.classList.toggle("translate-x-[60vw]");
+            menuBtn.textContent = isOpen ? "✕" : "☰";
         });
-    });
-}
+
+        mobileMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.add("translate-x-[60vw]");
+                mobileMenu.classList.remove("translate-x-0");
+                menuBtn.textContent = "☰";
+                isOpen = false;
+            });
+        });
+    }
+
+});
 
 /* ================= SCROLL REVEAL ================= */
 const reveals = document.querySelectorAll(".reveal");
@@ -215,7 +222,7 @@ if (grid) {
                 ${"★".repeat(product.rating)}${"☆".repeat(5 - product.rating)}
             </div>
 
-            <p class="mt-[0.8vh] md:text-[0.95vw] text-[2.2vw] text-gray-600">
+            <p class="mt-[0.8vh] md:text-[0.95vw] text-[3vw] text-gray-600">
                 ${product.price}
             </p>
 

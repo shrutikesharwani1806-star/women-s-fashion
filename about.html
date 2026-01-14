@@ -164,6 +164,78 @@
             }
         }
     </style>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-elegant {
+            font-family: 'Playfair Display', serif;
+        }
+
+
+        /* smooth fade animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(4vh);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .animate-fadeUp {
+            animation: fadeUp 1.2s ease forwards;
+        }
+
+        .mobile-link {
+            opacity: 0;
+            transform: translateY(2vh);
+            transition: all 0.5s ease;
+        }
+
+        .mobile-link.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(5vh);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            #productGrid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4vw;
+            }
+        }
+    </style>
+    <style>
+        /* FLOW FROM LEFT ANIMATION */
+        .flow-card {
+            opacity: 0;
+            transform: translateX(-60px);
+        }
+
+        .flow-card.flow-active {
+            opacity: 1;
+            transform: translateX(0);
+            transition:
+                transform 0.9s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.9s ease;
+        }
+    </style>
 
 </head>
 
@@ -368,6 +440,7 @@
     <footer class="w-[100vw] py-[5vh] bg-[#e6cfc4] text-center">
         <p class="text-[3vw] md:text-[1vw]">© 2026 Women's Fashion. All Rights Reserved.</p>
     </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>
