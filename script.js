@@ -1,3 +1,9 @@
+// ✅ FIX: Restore page when coming from back/forward navigation
+window.addEventListener("pageshow", function (event) {
+    document.body.style.opacity = "1";
+});
+
+
 /* ================= PAGE LOAD ANIMATIONS ================= */
 document.querySelectorAll('.animate-fadeUp').forEach((el, i) => {
     el.style.animationDelay = `${i * 0.3}s`;
